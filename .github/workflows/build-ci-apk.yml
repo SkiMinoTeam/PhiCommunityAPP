@@ -38,6 +38,8 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+      - name: Refactor Packge name
+        run: sed -i "s/cn.com.phicommunity.phicommunity/io.skiminoteam.phicommunityapp/g" `grep cn.com.phicommunity.phicommunity -rl ./`
 
       - name: Clone PhiCommunity
         run: git clone -b gh-pages https://github.com/SkiMinoTeam/PhiCommunity ./www/
